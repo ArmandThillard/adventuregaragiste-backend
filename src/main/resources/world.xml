@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <world>
-  <name>str1234</name>
+  <name>Ad'Venture Garagiste</name>
   <logo>str1234</logo>
-  <money>3.1415926535</money>
-  <score>3.1415926535</score>
+  <money>0</money>
+  <score>0</score>
   <totalangels>0</totalangels>
   <activeangels>0</activeangels>
   <angelbonus>2</angelbonus>
-  <lastupdate>12345</lastupdate>
+  <lastupdate>00:00:00</lastupdate>
   <products>
     <product>
       <id>1</id>
       <name>Voiture AIXAM</name>
       <logo>str1234</logo>
-      <cout>1</cout>
+      <cout>4</cout>
       <croissance>7</croissance>
       <revenu>1</revenu>
       <vitesse>0,5</vitesse>
@@ -22,32 +22,32 @@
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>str1234</name>
+          <name>Roues</name>
           <logo>str1234</logo>
-          <seuil>3.1415926535</seuil>
-          <idcible>123</idcible>
-          <ratio>3.1415926535</ratio>
+          <seuil>30</seuil>
+          <idcible>1</idcible>
+          <ratio>2</ratio>
           <typeratio>vitesse</typeratio>
-          <unlocked>true</unlocked>
+          <unlocked>false</unlocked>
         </pallier>
       </palliers>
     </product>
     <product>
-      <id>123</id>
-      <name>str1234</name>
+      <id>2</id>
+      <name>Twingo</name>
       <logo>str1234</logo>
-      <cout>3.1415926535</cout>
-      <croissance>3.1415926535</croissance>
-      <revenu>3.1415926535</revenu>
-      <vitesse>123</vitesse>
-      <quantite>123</quantite>
-      <timeleft>12345</timeleft>
-      <managerUnlocked>true</managerUnlocked>
+      <cout>60</cout>
+      <croissance>15</croissance>
+      <revenu>60</revenu>
+      <vitesse>3</vitesse>
+      <quantite>0</quantite>
+      <timeleft>3</timeleft>
+      <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
           <name>str1234</name>
           <logo>str1234</logo>
-          <seuil>3.1415926535</seuil>
+          <seuil>30</seuil>
           <idcible>123</idcible>
           <ratio>3.1415926535</ratio>
           <typeratio>vitesse</typeratio>
