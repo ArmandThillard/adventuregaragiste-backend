@@ -1,0 +1,22 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package projet;
+
+import static jdk.jfr.FlightRecorder.register;
+import org.graalvm.compiler.lir.CompositeValue.Component;
+
+/**
+ *
+ * @author alefev02
+ */
+@Component
+@ApplicationPath("/AdventureGaragiste")
+public class JerseyConfig extends ResourceConfig {
+
+    public JerseyConfig() {
+        register(Webservices.class);
+    }
+}
