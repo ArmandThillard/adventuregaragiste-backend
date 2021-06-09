@@ -26,6 +26,7 @@ public class Webservices {
     @Produces(MediaType.APPLICATION_XML)
         public Response getWorld(){
             return Response.ok(services.getWorld()).build();
+            
         }
     
 }
