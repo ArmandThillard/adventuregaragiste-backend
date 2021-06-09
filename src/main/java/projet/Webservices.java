@@ -19,14 +19,15 @@ import javax.ws.rs.core.Response;
 public class Webservices {
     Services services;
     public Webservices(){
-        services =new Services();
+        services = new Services();
     }
+    
     @GET
     @Path("world")
     @Produces(MediaType.APPLICATION_XML)
-        public Response getWorld(){
-            return Response.ok(services.getWorld()).build();
-            
-        }
+    public Response getWorld(){
+        return Response.ok(services.getWorld()).build();
+        
+    }
     
 }
