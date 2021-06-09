@@ -12,6 +12,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.bind.JAXBContext;
+
 
 @SpringBootApplication
 public class AdventureGaragisteApplication {
@@ -19,16 +21,8 @@ public class AdventureGaragisteApplication {
  	public static void main(String[] args) {
             SpringApplication.run(AdventureGaragisteApplication.class, args);
             
-            try {JAXBContext cont = JAXBContext.newInstance(World.class);
-            Unmarshaller u = cont.createUnmarshaller();
-            World world = (World) u.unmarshal(new File("src/main/resources/world.xml"));
-            
-            System.out.print(world.getName());
-            
-            }
-            catch (Exception e) {
-                e.printStackTrace();
-            }
+            Services s = new Services();
+            s.readWorldFromXml();
             
             
 		
