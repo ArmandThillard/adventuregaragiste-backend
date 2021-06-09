@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
  * @author alefev02
  */
 @Component
-@ApplicationPath("/AdventureGaragiste")
+@ApplicationPath("/adventuregaragiste")
 public class JerseyConfig extends ResourceConfig {
 
     public JerseyConfig() {

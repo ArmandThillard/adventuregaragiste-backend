@@ -20,11 +20,12 @@ import javax.xml.bind.Unmarshaller;
 public class Services {
 
     public World readWorldFromXml() {
+       World world = null;
         try {
             JAXBContext cont = JAXBContext.newInstance(World.class);
             Unmarshaller u = cont.createUnmarshaller();
             //ajouter le INPUT stream (page 19)
-            World world = (World) u.unmarshal(new File("src/main/resources/world.xml"));
+           world = (World) u.unmarshal(new File("src/main/resources/world.xml"));
             InputStream input=getClass().getClassLoader().getResourceAsStream("src/main/resources/world.xml");
 
             System.out.print(world.getName());
@@ -32,7 +33,8 @@ public class Services {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        return world;
+        
 
     }
 
@@ -43,8 +45,9 @@ public class Services {
         Marshaller m = cont.createMarshaller();
         //crée le nouveau fichier
         m.marshal(world, new File("newWorld.xml"));
+        m.marshal(world, new FileOutputStream("newWorld2.xml"));
         //crée le nouveau fichier mais est vide, à rectifier
-        OutputStream output = new FileOutputStream("newWorld2.xml");
+        
                   
 
         } catch (Exception e) {
@@ -55,11 +58,9 @@ public class Services {
 
     }
 
-    public World getWorld() {
-        World world = new World();
-            Services s = new Services();
-            s.readWorldFromXml();
-        return null;
+    public World getWorld() {       
+            
+            return readWorldFromXml();
     }
 
 }

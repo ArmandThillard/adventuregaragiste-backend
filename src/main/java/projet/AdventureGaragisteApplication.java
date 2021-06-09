@@ -21,9 +21,10 @@ public class AdventureGaragisteApplication {
  	public static void main(String[] args) {
             SpringApplication.run(AdventureGaragisteApplication.class, args);
             
-            World world = new World();
+            
             Services s = new Services();
-            s.getWorld();
+            World world = s.getWorld();
+            s.saveWordlToXml(world);
             
             
 		
