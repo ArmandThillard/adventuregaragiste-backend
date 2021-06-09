@@ -12,7 +12,7 @@
     <product>
       <id>1</id>
       <name>Voiture AIXAM</name>
-      <logo>str1234</logo>
+      <logo>http://localhost:8080/icones/aixam.png</logo>
       <cout>4</cout>
       <croissance>7</croissance>
       <revenu>1</revenu>
@@ -24,7 +24,7 @@
         <pallier>
           <name>Roues</name>
           <logo>str1234</logo>
-          <seuil>30</seuil>
+          <seuil>50</seuil>
           <idcible>1</idcible>
           <ratio>2</ratio>
           <typeratio>vitesse</typeratio>
@@ -35,7 +35,7 @@
     <product>
       <id>2</id>
       <name>Twingo</name>
-      <logo>str1234</logo>
+      <logo>http://localhost:8080/icones/twingo.jpg</logo>
       <cout>60</cout>
       <croissance>15</croissance>
       <revenu>60</revenu>
@@ -47,7 +47,7 @@
         <pallier>
           <name>str1234</name>
           <logo>str1234</logo>
-          <seuil>30</seuil>
+          <seuil>50</seuil>
           <idcible>123</idcible>
           <ratio>3.1415926535</ratio>
           <typeratio>vitesse</typeratio>
