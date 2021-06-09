@@ -8,6 +8,7 @@ package projet;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.io.OutputStream;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
@@ -25,6 +26,7 @@ public class Services {
             Unmarshaller u = cont.createUnmarshaller();
             //ajouter le INPUT stream (page 19)
             World world = (World) u.unmarshal(new File("src/main/resources/world.xml"));
+            InputStream input=getClass().getClassLoader().getResourceAsStream("world.xml");
 
             System.out.print(world.getName());
 
