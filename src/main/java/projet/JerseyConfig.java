@@ -6,7 +6,7 @@
 package projet;
 
 import javax.ws.rs.ApplicationPath;
-import static jdk.jfr.FlightRecorder.register;
+
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.stereotype.Component;
 
