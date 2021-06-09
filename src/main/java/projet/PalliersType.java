@@ -6,7 +6,7 @@
 //
 
 
-package generated;
+package projet;
 
 import java.util.ArrayList;
 import java.util.List;

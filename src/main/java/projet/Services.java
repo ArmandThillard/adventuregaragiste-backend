@@ -10,5 +10,19 @@ package projet;
  * @author alefev02
  */
 public class Services {
+    public World readWorldFromXml(){
+        return null;
+        
+    }
+    
+    public void saveWordlToXml(World world) {
+    }
+    
+    public World getWorld(){
+        return null;
+    }
+           
+    
+    
     
 }
