@@ -5,7 +5,9 @@
  */
 package projet;
 
+import javax.ws.rs.ApplicationPath;
 import static jdk.jfr.FlightRecorder.register;
+import org.glassfish.jersey.server.ResourceConfig;
 import org.graalvm.compiler.lir.CompositeValue.Component;
 
 /**
