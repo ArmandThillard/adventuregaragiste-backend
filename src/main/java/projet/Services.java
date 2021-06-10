@@ -23,10 +23,10 @@ public class Services {
         try {
             JAXBContext cont = JAXBContext.newInstance(World.class);
             Unmarshaller u = cont.createUnmarshaller();
-            //ajouter le INPUT stream (page 19)
-           world = (World) u.unmarshal(new File("src/main/resources/world.xml"));
-            InputStream input=getClass().getClassLoader().getResourceAsStream("src/main/resources/world.xml");
+            InputStream input = getClass().getClassLoader().getResourceAsStream("world.xml");
 
+            world = (World) u.unmarshal(input);
+            
             System.out.print(world.getName());
 
         } catch (Exception e) {
