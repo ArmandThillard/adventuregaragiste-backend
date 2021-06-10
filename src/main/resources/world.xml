@@ -173,7 +173,7 @@
   <angelupgrades>
     <pallier>
       <name>grid girl</name>
-      <logo>icones/angel.png</logo>
+      <logo>icones/angel.jpg</logo>
       <seuil>1000</seuil>
       <idcible>-1</idcible>
       <ratio>2</ratio>
@@ -184,11 +184,65 @@
   <managers>
     <pallier>
       <name>Mamie</name>
-      <logo>str1234</logo>
+      <logo>icones/mamie.jpg</logo>
       <seuil>1000</seuil>
       <idcible>1</idcible>
-      <ratio>2</ratio>
-      <typeratio>vitesse</typeratio>
+      <ratio></ratio>
+      <typeratio></typeratio>
+      <unlocked>false</unlocked>
+    </pallier>   
+    <pallier>
+      <name>Etudiant</name>
+      <logo>icones/etudiant.jpg</logo>
+      <seuil>15000</seuil>
+      <idcible>2</idcible>
+      <ratio></ratio>
+      <typeratio></typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Pere de famille</name>
+      <logo>icones/brad.jpg</logo>
+      <seuil>100000</seuil>
+      <idcible>3</idcible>
+      <ratio></ratio>
+      <typeratio></typeratio>
+      <unlocked>false</unlocked>
+    </pallier> 
+    <pallier>
+      <name>Paul Walker</name>
+      <logo>icones/paul.jpg</logo>
+      <seuil>500000</seuil>
+      <idcible>4</idcible>
+      <ratio></ratio>
+      <typeratio></typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Sebastien Loeb</name>
+      <logo>icones/loeb.jpg</logo>
+      <seuil>1200000</seuil>
+      <idcible>5</idcible>
+      <ratio></ratio>
+      <typeratio></typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Sebastien Loeb</name>
+      <logo>icones/loeb.jpg</logo>
+      <seuil>1200000</seuil>
+      <idcible>5</idcible>
+      <ratio></ratio>
+      <typeratio></typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Charles Leclerc</name>
+      <logo>icones/leclerc.jpg</logo>
+      <seuil>10000000</seuil>
+      <idcible>6</idcible>
+      <ratio></ratio>
+      <typeratio></typeratio>
       <unlocked>false</unlocked>
     </pallier>
   </managers>

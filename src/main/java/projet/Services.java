@@ -43,8 +43,7 @@ public class Services {
         JAXBContext cont = JAXBContext.newInstance(World.class);
         Marshaller m = cont.createMarshaller();
         //crée le nouveau fichier
-        m.marshal(world, new File("newWorld.xml"));
-        m.marshal(world, new FileOutputStream("newWorld2.xml"));
+        m.marshal(world, new FileOutputStream("newWorld.xml"));
         //crée le nouveau fichier mais est vide, à rectifier
         
                   
