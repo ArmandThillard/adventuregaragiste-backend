@@ -53,13 +53,13 @@
             <version>1.1.1</version>
         </dependency>
         <dependency>
-		    <groupId>org.glassfish.jersey.media</groupId>
-		    <artifactId>jersey-media-jaxb</artifactId>
-	    </dependency>
-	    <dependency>
-	      <groupId>org.springframework.boot</groupId>
-	      <artifactId>spring-boot-starter-web</artifactId>
-	    </dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-jaxb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

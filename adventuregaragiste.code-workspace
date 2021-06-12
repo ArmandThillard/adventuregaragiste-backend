@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "[java]": {
+      "editor.defaultFormatter": "redhat.java"
+    },
+    "editor.formatOnSave": true,
+    "java.format.settings.profile": ".setting/org.eclipse.jdt.core.prefs"
+  }
+}
