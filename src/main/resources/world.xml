@@ -14,11 +14,11 @@
       <name>Voiture AIXAM</name>
       <logo>icones/aixam.png</logo>
       <cout>4</cout>
-      <croissance>1,07</croissance>
+      <croissance>1.07</croissance>
       <revenu>1</revenu>
-      <vitesse>0,5</vitesse>
+      <vitesse>0.5</vitesse>
       <quantite>1</quantite>
-      <timeleft>0,5</timeleft>
+      <timeleft>0.5</timeleft>
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
@@ -37,7 +37,7 @@
       <name>Twingo</name>
       <logo>icones/twingo.jpg</logo>
       <cout>60</cout>
-      <croissance>1,15</croissance>
+      <croissance>1.15</croissance>
       <revenu>60</revenu>
       <vitesse>3</vitesse>
       <quantite>0</quantite>
@@ -60,7 +60,7 @@
       <name>Audi A4</name>
       <logo>icones/audi.jpg</logo>
       <cout>720</cout>
-      <croissance>1,14</croissance>
+      <croissance>1.14</croissance>
       <revenu>540</revenu>
       <vitesse>6</vitesse>
       <quantite>0</quantite>
@@ -83,7 +83,7 @@
       <name>Lotus Exige</name>
       <logo>icones/lotus.jpg</logo>
       <cout>8640</cout>
-      <croissance>1,13</croissance>
+      <croissance>1.13</croissance>
       <revenu>4320</revenu>
       <vitesse>12</vitesse>
       <quantite>0</quantite>
@@ -106,7 +106,7 @@
       <name>Ferrari 488</name>
       <logo>icones/ferrari.jpg</logo>
       <cout>103680</cout>
-      <croissance>1,12</croissance>
+      <croissance>1.12</croissance>
       <revenu>51840</revenu>
       <vitesse>24</vitesse>
       <quantite>0</quantite>
@@ -129,7 +129,7 @@
       <name>Formule 1</name>
       <logo>icones/f1.jpg</logo>
       <cout>1244160</cout>
-      <croissance>1,11</croissance>
+      <croissance>1.11</croissance>
       <revenu>622080</revenu>
       <vitesse>96</vitesse>
       <quantite>0</quantite>
