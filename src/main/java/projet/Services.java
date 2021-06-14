@@ -5,6 +5,8 @@
  */
 package projet;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import javax.xml.bind.JAXBContext;
@@ -17,32 +19,40 @@ import javax.xml.bind.Unmarshaller;
  */
 public class Services {
 
-    public World readWorldFromXml() {
-        World world = null;
+    public World readWorldFromXml(String username) {
+        World world = new World();
+        InputStream input = null;
+
         try {
-            JAXBContext cont = JAXBContext.newInstance(World.class);
-            Unmarshaller u = cont.createUnmarshaller();
-            InputStream input = getClass().getClassLoader().getResourceAsStream("world.xml");
+            input = new FileInputStream(username + "-world.xml");
+        } catch (FileNotFoundException ex) {
+            input = getClass().getClassLoader().getResourceAsStream("world.xml");
+        } finally {
 
-            world = (World) u.unmarshal(input);
+            try {
+                JAXBContext cont = JAXBContext.newInstance(World.class);
+                Unmarshaller u = cont.createUnmarshaller();
+                world = (World) u.unmarshal(input);
 
-            System.out.print(world.getName());
+                System.out.println(world.getName());
+                System.out.println("username : " + username);
 
-        } catch (Exception e) {
-            e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         }
         return world;
 
     }
 
-    public void saveWordlToXml(World world) {
+    public void saveWordlToXml(World world, String username) {
 
         try {
             JAXBContext cont = JAXBContext.newInstance(World.class);
             Marshaller m = cont.createMarshaller();
-            // crée le nouveau fichier
-            m.marshal(world, new FileOutputStream("newWorld.xml"));
-            // crée le nouveau fichier mais est vide, à rectifier
+
+            m.marshal(world, new FileOutputStream(username + "-world.xml"));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -50,9 +60,9 @@ public class Services {
 
     }
 
-    public World getWorld() {
+    public World getWorld(String username) {
 
-        return readWorldFromXml();
+        return readWorldFromXml(username);
     }
 
 }
