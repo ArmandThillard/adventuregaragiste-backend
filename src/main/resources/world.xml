@@ -228,15 +228,6 @@
       <unlocked>false</unlocked>
     </pallier>
     <pallier>
-      <name>Sebastien Loeb</name>
-      <logo>icones/loeb.jpg</logo>
-      <seuil>1200000</seuil>
-      <idcible>5</idcible>
-      <ratio></ratio>
-      <typeratio></typeratio>
-      <unlocked>false</unlocked>
-    </pallier>
-    <pallier>
       <name>Charles Leclerc</name>
       <logo>icones/leclerc.jpg</logo>
       <seuil>10000000</seuil>
