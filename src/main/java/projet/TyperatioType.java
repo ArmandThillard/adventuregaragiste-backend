@@ -5,19 +5,21 @@
 // Généré le : 2021.06.08 à 09:05:52 AM GMT+01:00 
 //
 
-
 package projet;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Classe Java pour typeratioType.
- * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
  * <p>
+ * Classe Java pour typeratioType.
+ * 
+ * <p>
+ * Le fragment de schéma suivant indique le contenu attendu figurant dans cette
+ * classe.
+ * <p>
+ * 
  * <pre>
  * &lt;simpleType name="typeratioType">
  *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
@@ -34,11 +36,11 @@ import javax.xml.bind.annotation.XmlType;
 public enum TyperatioType {
 
     @XmlEnumValue("vitesse")
-    VITESSE("vitesse"),
-    @XmlEnumValue("gain")
-    GAIN("gain"),
-    @XmlEnumValue("ange")
+    VITESSE("vitesse"), @XmlEnumValue("gain")
+    GAIN("gain"), @XmlEnumValue("quantite")
+    QUANTITE("quantite"), @XmlEnumValue("ange")
     ANGE("ange");
+
     private final String value;
 
     TyperatioType(String v) {
@@ -50,7 +52,7 @@ public enum TyperatioType {
     }
 
     public static TyperatioType fromValue(String v) {
-        for (TyperatioType c: TyperatioType.values()) {
+        for (TyperatioType c : TyperatioType.values()) {
             if (c.value.equals(v)) {
                 return c;
             }
