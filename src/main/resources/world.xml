@@ -174,10 +174,28 @@
     <pallier>
       <name>grid girl</name>
       <logo>icones/angel.jpg</logo>
+      <seuil>1000000</seuil>
+      <idcible>0</idcible>
+      <ratio>3</ratio>
+      <typeratio>gain</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>grid girl</name>
+      <logo>icones/angel.jpg</logo>
       <seuil>1000</seuil>
       <idcible>-1</idcible>
       <ratio>2</ratio>
-      <typeratio>angel</typeratio>
+      <typeratio>ange</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>grid girl</name>
+      <logo>icones/angel.jpg</logo>
+      <seuil>1000</seuil>
+      <idcible>1</idcible>
+      <ratio>10</ratio>
+      <typeratio>quantite</typeratio>
       <unlocked>false</unlocked>
     </pallier>
   </angelupgrades>
