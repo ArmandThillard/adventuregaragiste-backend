@@ -5,6 +5,8 @@
  */
 package projet;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -46,4 +48,15 @@ public class Webservices {
 
     }
 
+    // prend en paramètre le pseudo du joueur et le manager acheté.
+    // renvoie false si l’action n’a pas pu être traitée
+    @PUT
+    @Path("manager")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void updateManager(@Context HttpServletRequest request, @RequestBody PallierType newmanager) {
+
+        String username = request.getHeader("X-user");
+
+        this.services.updateManager(username, newmanager);
+    }
 }
