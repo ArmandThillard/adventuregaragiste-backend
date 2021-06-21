@@ -76,7 +76,7 @@ public class Services {
         // en paramètre
         int managerIndex = 0;
         for (PallierType m : world.managers.pallier) {
-            if (newmanager.getName() == m.getName()) {
+            if (newmanager.getName().equals(m.getName())) {
                 managerIndex = world.managers.pallier.indexOf(m);
             }
         }
@@ -98,6 +98,108 @@ public class Services {
 
         // soustraire de l'argent du joueur le cout du manager
         world.money -= manager.getSeuil();
+
+        // sauvegarder les changements au monde
+        this.saveWordlToXml(world, username);
+        return true;
+    }
+
+    public Boolean updateUpgrade(String username, PallierType newupgrade) {
+
+        // aller chercher le monde qui correspond au joueur
+        World world = this.getWorld(username);
+        world = this.calcMoney(world);
+
+        // trouver dans ce monde, le manager équivalent à celui passé
+        // en paramètre
+        int upgradeIndex = 0;
+        for (PallierType u : world.upgrades.pallier) {
+            if (newupgrade.getName().equals(u.getName())) {
+                upgradeIndex = world.upgrades.pallier.indexOf(u);
+            }
+        }
+
+        PallierType upgrade = world.upgrades.pallier.get(upgradeIndex);
+        if (upgrade == null) {
+            return false;
+        } else {
+            upgrade.setUnlocked(true);
+        }
+
+        // trouver le produit correspondant au manager
+        ProductType product = world.products.getProduct().get(upgrade.getIdcible() - 1);
+        if (product == null) {
+            return false;
+        } else {
+            switch (upgrade.getIdcible()) {
+            case -1:
+                world.angelbonus += upgrade.getRatio();
+                break;
+            case 0:
+                for (ProductType p : world.products.getProduct()) {
+                    p.vitesse = (int) (product.getVitesse() / upgrade.getRatio());
+                }
+                break;
+            default:
+                product.vitesse = (int) (product.getVitesse() / upgrade.getRatio());
+                break;
+            }
+        }
+
+        // soustraire de l'argent du joueur le cout du manager
+        world.money -= upgrade.getSeuil();
+
+        // sauvegarder les changements au monde
+        this.saveWordlToXml(world, username);
+        return true;
+    }
+
+    public Boolean updateAngelUpgrade(String username, PallierType newangelupgrade) {
+
+        // aller chercher le monde qui correspond au joueur
+        World world = this.getWorld(username);
+        world = this.calcMoney(world);
+
+        // trouver dans ce monde, le manager équivalent à celui passé
+        // en paramètre
+        int angelUpgradeIndex = 0;
+        for (PallierType au : world.angelupgrades.pallier) {
+            if (newangelupgrade.getName().equals(au.getName())) {
+                angelUpgradeIndex = world.angelupgrades.pallier.indexOf(au);
+            }
+        }
+
+        PallierType angelUpgrade = world.angelupgrades.pallier.get(angelUpgradeIndex);
+        if (angelUpgrade == null) {
+            return false;
+        } else {
+            angelUpgrade.setUnlocked(true);
+        }
+
+        switch (angelUpgrade.getIdcible()) {
+        case -1:
+            world.angelbonus += angelUpgrade.getRatio();
+            break;
+        case 0:
+            for (ProductType p : world.products.getProduct()) {
+                p.revenu = (int) (p.getRevenu() * angelUpgrade.getRatio());
+            }
+            break;
+        default:
+            ProductType product = world.products.getProduct().get(angelUpgrade.getIdcible() - 1);
+            if (product == null) {
+                return false;
+            }
+            if (angelUpgrade.getTyperatio() == TyperatioType.GAIN) {
+                product.revenu = (int) (product.getRevenu() * angelUpgrade.getRatio());
+            }
+            if (angelUpgrade.getTyperatio() == TyperatioType.QUANTITE) {
+                product.quantite += angelUpgrade.getRatio();
+            }
+            break;
+        }
+        // soustraire de l'argent du joueur le cout du manager
+        world.activeangels -= angelUpgrade.getSeuil();
 
         // sauvegarder les changements au monde
         this.saveWordlToXml(world, username);

@@ -5,8 +5,6 @@
  */
 package projet;
 
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -50,11 +48,33 @@ public class Webservices {
 
     @PUT
     @Path("manager")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void updateManager(@Context HttpServletRequest request, @RequestBody PallierType newmanager) {
+    @Consumes({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+    public void putManager(@Context HttpServletRequest request, @RequestBody PallierType newmanager) {
 
         String username = request.getHeader("X-user");
 
         this.services.updateManager(username, newmanager);
+    }
+
+    @PUT
+    @Path("upgrade")
+    @Consumes({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+    public void putUpgrade(@Context HttpServletRequest request, @RequestBody PallierType newupgrade) {
+
+        String username = request.getHeader("X-user");
+
+        this.services.updateUpgrade(username, newupgrade);
+
+    }
+
+    @PUT
+    @Path("angelupgrade")
+    @Consumes({ MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+    public void putAngelUpgrade(@Context HttpServletRequest request, @RequestBody PallierType newangelupgrade) {
+
+        String username = request.getHeader("X-user");
+
+        this.services.updateAngelUpgrade(username, newangelupgrade);
+
     }
 }
