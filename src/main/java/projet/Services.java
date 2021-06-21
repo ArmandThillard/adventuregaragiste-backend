@@ -65,6 +65,62 @@ public class Services {
         return readWorldFromXml(username);
     }
 
+    public Boolean updateManager(String username, PallierType newmanager) {
+
+        // aller chercher le monde qui correspond au joueur
+        World world = this.getWorld(username);
+        // trouver dans ce monde, le manager équivalent à celui passé
+        // en paramètre
+        int managerIndex = 0;
+        for (PallierType m : world.managers.pallier) {
+            if (newmanager.getName() == m.getName()) {
+                managerIndex = world.managers.pallier.indexOf(m);
+            }
+        }
+
+        PallierType manager = world.managers.pallier.get(managerIndex);
+        if (manager == null) {
+            return false;
+        } else {
+            manager.setUnlocked(true);
+        }
+
+        // trouver le produit correspondant au manager
+        ProductType product = world.products.getProduct().get(manager.getIdcible());
+        if (product == null) {
+            return false;
+        }
+
+        // soustraire de l'argent du joueur le cout du manager
+        world = this.calcMoney(world);
+
+        // sauvegarder les changements au monde
+        this.saveWordlToXml(world, username);
+        return true;
+    }
+
+    public World calcMoney(World world) {
+        long spentTime = System.currentTimeMillis() - world.getLastupdate();
+        for (ProductType p : world.products.product) {
+            if (p.isManagerUnlocked()) {
+                spentTime += p.getTimeleft();
+                world.money += Math.floor(spentTime / p.getVitesse()) * (p.getQuantite() * p.getRevenu()
+                        * (1 + (world.getActiveangels() * world.getAngelbonus()) / 100));
+                p.timeleft = spentTime % p.getVitesse();
+            } else {
+                if (p.timeleft != 0) {
+                    if (spentTime < p.getTimeleft()) {
+                        p.setTimeleft(p.getTimeleft() - spentTime);
+                    } else {
+                        world.money += p.getQuantite() * p.getRevenu()
+                                * (1 + (world.getActiveangels() * world.getAngelbonus()) / 100);
+                    }
+                }
+            }
+        }
+        return world;
+    }
+
     public Boolean updateProduct(String username, ProductType newproduct) {
         World world = getWorld(username);
 
