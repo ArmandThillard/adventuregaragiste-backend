@@ -42,6 +42,7 @@ public class Services {
             }
 
         }
+        this.calcMoney(world);
         return world;
 
     }
@@ -69,6 +70,8 @@ public class Services {
 
         // aller chercher le monde qui correspond au joueur
         World world = this.getWorld(username);
+        world = this.calcMoney(world);
+
         // trouver dans ce monde, le manager équivalent à celui passé
         // en paramètre
         int managerIndex = 0;
@@ -86,13 +89,15 @@ public class Services {
         }
 
         // trouver le produit correspondant au manager
-        ProductType product = world.products.getProduct().get(manager.getIdcible());
+        ProductType product = world.products.getProduct().get(manager.getIdcible() - 1);
         if (product == null) {
             return false;
+        } else {
+            product.setManagerUnlocked(true);
         }
 
         // soustraire de l'argent du joueur le cout du manager
-        world = this.calcMoney(world);
+        world.money -= manager.getSeuil();
 
         // sauvegarder les changements au monde
         this.saveWordlToXml(world, username);
@@ -100,10 +105,11 @@ public class Services {
     }
 
     public World calcMoney(World world) {
-        long spentTime = System.currentTimeMillis() - world.getLastupdate();
+        long currentTime = System.currentTimeMillis();
+        long spentTime = currentTime - world.getLastupdate();
+        world.setLastupdate(currentTime);
         for (ProductType p : world.products.product) {
             if (p.isManagerUnlocked()) {
-                spentTime += p.getTimeleft();
                 world.money += Math.floor(spentTime / p.getVitesse()) * (p.getQuantite() * p.getRevenu()
                         * (1 + (world.getActiveangels() * world.getAngelbonus()) / 100));
                 p.timeleft = spentTime % p.getVitesse();
@@ -112,6 +118,7 @@ public class Services {
                     if (spentTime < p.getTimeleft()) {
                         p.setTimeleft(p.getTimeleft() - spentTime);
                     } else {
+                        p.setTimeleft(0);
                         world.money += p.getQuantite() * p.getRevenu()
                                 * (1 + (world.getActiveangels() * world.getAngelbonus()) / 100);
                     }
@@ -123,6 +130,8 @@ public class Services {
 
     public Boolean updateProduct(String username, ProductType newproduct) {
         World world = getWorld(username);
+
+        world = this.calcMoney(world);
 
         ProductType product = findProductById(world, newproduct.getId());
 
@@ -157,6 +166,6 @@ public class Services {
     }
 
     public ProductType findProductById(World world, int id) {
-        return world.getProducts().getProduct().get(id);
+        return world.getProducts().getProduct().get(id - 1);
     }
 }

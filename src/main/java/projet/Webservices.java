@@ -48,8 +48,6 @@ public class Webservices {
 
     }
 
-    // prend en paramètre le pseudo du joueur et le manager acheté.
-    // renvoie false si l’action n’a pas pu être traitée
     @PUT
     @Path("manager")
     @Consumes(MediaType.APPLICATION_JSON)
