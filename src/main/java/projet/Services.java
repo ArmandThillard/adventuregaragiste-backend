@@ -65,4 +65,42 @@ public class Services {
         return readWorldFromXml(username);
     }
 
+    public Boolean updateProduct(String username, ProductType newproduct) {
+        World world = getWorld(username);
+
+        ProductType product = findProductById(world, newproduct.getId());
+
+        if (product == null) {
+            return false;
+        }
+
+        int qtchange = newproduct.getQuantite() - product.getQuantite();
+        if (qtchange > 0) {
+            // soustraire de l'argent du joueur le cout de la quantité
+            // achetée et mettre à jour la quantité de product
+            // uN = u1 ((1-r^n)/(1-r))
+            double argent = product.getCout()
+                    * ((1 - Math.pow(product.getCroissance(), qtchange)) / (1 - product.getCroissance()));
+            double argent2 = world.getMoney() - argent;
+
+            world.setMoney(argent2);
+
+            int nbproduit = product.getQuantite() + qtchange;
+            product.setQuantite(nbproduit);
+
+        } else {
+            // initialiser product.timeleft à product.vitesse
+            // pour lancer la production}
+            // sauvegarder les changements du monde
+            long tl = product.getVitesse();
+            product.setTimeleft(tl);
+        }
+        saveWordlToXml(world, username);
+        System.out.println(username);
+        return true;
+    }
+
+    public ProductType findProductById(World world, int id) {
+        return world.getProducts().getProduct().get(id);
+    }
 }
