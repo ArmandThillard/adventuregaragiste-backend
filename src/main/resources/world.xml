@@ -35,7 +35,7 @@
     <product>
       <id>2</id>
       <name>Twingo</name>
-      <logo>icones/twingo.jpg</logo>
+      <logo>icones/twingo.png</logo>
       <cout>60</cout>
       <croissance>1.15</croissance>
       <revenu>60</revenu>
@@ -58,7 +58,7 @@
     <product>
       <id>3</id>
       <name>Audi A4</name>
-      <logo>icones/audi.jpg</logo>
+      <logo>icones/audi.png</logo>
       <cout>720</cout>
       <croissance>1.14</croissance>
       <revenu>540</revenu>
@@ -81,7 +81,7 @@
     <product>
       <id>4</id>
       <name>Lotus Exige</name>
-      <logo>icones/lotus.jpg</logo>
+      <logo>icones/lotus.png</logo>
       <cout>8640</cout>
       <croissance>1.13</croissance>
       <revenu>4320</revenu>
@@ -104,7 +104,7 @@
     <product>
       <id>5</id>
       <name>Ferrari 488</name>
-      <logo>icones/ferrari.jpg</logo>
+      <logo>icones/ferrari.png</logo>
       <cout>103680</cout>
       <croissance>1.12</croissance>
       <revenu>51840</revenu>
@@ -127,7 +127,7 @@
     <product>
       <id>6</id>
       <name>Formule 1</name>
-      <logo>icones/f1.jpg</logo>
+      <logo>icones/f1.png</logo>
       <cout>1244160</cout>
       <croissance>1.11</croissance>
       <revenu>622080</revenu>
