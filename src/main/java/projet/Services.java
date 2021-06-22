@@ -212,8 +212,10 @@ public class Services {
         world.setLastupdate(currentTime);
         for (ProductType p : world.products.product) {
             if (p.isManagerUnlocked()) {
-                world.money += Math.floor(spentTime / p.getVitesse()) * (p.getQuantite() * p.getRevenu()
+                double earnedMoney = Math.floor(spentTime / p.getVitesse()) * (p.getQuantite() * p.getRevenu()
                         * (1 + (world.getActiveangels() * world.getAngelbonus()) / 100));
+                world.money += earnedMoney;
+                world.score += earnedMoney;
                 p.timeleft = spentTime % p.getVitesse();
             } else {
                 if (p.timeleft != 0) {
@@ -221,8 +223,10 @@ public class Services {
                         p.setTimeleft(p.getTimeleft() - spentTime);
                     } else {
                         p.setTimeleft(0);
-                        world.money += p.getQuantite() * p.getRevenu()
+                        double earnedMoney = p.getQuantite() * p.getRevenu()
                                 * (1 + (world.getActiveangels() * world.getAngelbonus()) / 100);
+                        world.money += earnedMoney;
+                        world.score += earnedMoney;
                     }
                 }
             }
@@ -272,15 +276,20 @@ public class Services {
 
     public void resetWorld(String username) {
         World world = getWorld(username);
-        double angel = world.getActiveangels();
-        World newWorld = new World();
+        world = this.calcMoney(world);
+        double score = world.getScore();
+        double totalangels = world.getTotalangels();
+        double activeangel = world.getActiveangels();
+        double claimedAngel = Math.floor(150 * Math.sqrt(score / Math.pow(10, 15)) - totalangels);
         InputStream input = null;
         input = getClass().getClassLoader().getResourceAsStream("world.xml");
         try {
             JAXBContext cont = JAXBContext.newInstance(World.class);
             Unmarshaller u = cont.createUnmarshaller();
-            newWorld = (World) u.unmarshal(input);
-            newWorld.setActiveangels(angel);
+            World newWorld = (World) u.unmarshal(input);
+            newWorld.setScore(score);
+            newWorld.setActiveangels(activeangel + claimedAngel);
+            newWorld.setTotalangels(totalangels + claimedAngel);
             saveWordlToXml(newWorld, username);
         } catch (Exception e) {
             e.printStackTrace();
