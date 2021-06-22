@@ -246,8 +246,7 @@ public class Services {
             // soustraire de l'argent du joueur le cout de la quantité
             // achetée et mettre à jour la quantité de product
             // uN = u1 ((1-r^n)/(1-r))
-            double argent = product.getCout()
-                    * ((1 - Math.pow(product.getCroissance(), qtchange)) / (1 - product.getCroissance()));
+            double argent = product.getCout() * Math.pow(product.getCroissance(), qtchange);
             double argent2 = world.getMoney() - argent;
 
             world.setMoney(argent2);
@@ -269,5 +268,23 @@ public class Services {
 
     public ProductType findProductById(World world, int id) {
         return world.getProducts().getProduct().get(id - 1);
+    }
+
+    public void resetWorld(String username) {
+        World world = getWorld(username);
+        double angel = world.getActiveangels();
+        World newWorld = new World();
+        InputStream input = null;
+        input = getClass().getClassLoader().getResourceAsStream("world.xml");
+        try {
+            JAXBContext cont = JAXBContext.newInstance(World.class);
+            Unmarshaller u = cont.createUnmarshaller();
+            newWorld = (World) u.unmarshal(input);
+            newWorld.setActiveangels(angel);
+            saveWordlToXml(newWorld, username);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }
