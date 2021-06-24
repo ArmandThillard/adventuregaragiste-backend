@@ -33,10 +33,6 @@ public class Services {
                 JAXBContext cont = JAXBContext.newInstance(World.class);
                 Unmarshaller u = cont.createUnmarshaller();
                 world = (World) u.unmarshal(input);
-
-                System.out.println(world.getName());
-                System.out.println("username : " + username);
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -137,11 +133,11 @@ public class Services {
                 break;
             case 0:
                 for (ProductType p : world.products.getProduct()) {
-                    p.vitesse = (int) (product.getVitesse() / upgrade.getRatio());
+                    this.applyPallier(p, upgrade);
                 }
                 break;
             default:
-                product.vitesse = (int) (product.getVitesse() / upgrade.getRatio());
+                this.applyPallier(product, upgrade);
                 break;
             }
         }
@@ -160,8 +156,6 @@ public class Services {
         World world = this.getWorld(username);
         world = this.calcMoney(world);
 
-        // trouver dans ce monde, le manager équivalent à celui passé
-        // en paramètre
         int angelUpgradeIndex = 0;
         for (PallierType au : world.angelupgrades.pallier) {
             if (newangelupgrade.getName().equals(au.getName())) {
@@ -182,19 +176,15 @@ public class Services {
             break;
         case 0:
             for (ProductType p : world.products.getProduct()) {
-                p.revenu = (int) (p.getRevenu() * angelUpgrade.getRatio());
+                this.applyPallier(p, angelUpgrade);
             }
             break;
         default:
             ProductType product = world.products.getProduct().get(angelUpgrade.getIdcible() - 1);
             if (product == null) {
                 return false;
-            }
-            if (angelUpgrade.getTyperatio() == TyperatioType.GAIN) {
-                product.revenu = (int) (product.getRevenu() * angelUpgrade.getRatio());
-            }
-            if (angelUpgrade.getTyperatio() == TyperatioType.QUANTITE) {
-                product.quantite += angelUpgrade.getRatio();
+            } else {
+                this.applyPallier(product, angelUpgrade);
             }
             break;
         }
@@ -250,13 +240,38 @@ public class Services {
             // soustraire de l'argent du joueur le cout de la quantité
             // achetée et mettre à jour la quantité de product
             // uN = u1 ((1-r^n)/(1-r))
-            double argent = product.getCout() * Math.pow(product.getCroissance(), qtchange);
+            double argent = product.getCout() * (1 - Math.pow(product.getCroissance(), qtchange))
+                    / (1 - product.getCroissance());
+            product.setCout(product.getCout() * Math.pow(product.getCroissance(), qtchange));
             double argent2 = world.getMoney() - argent;
 
             world.setMoney(argent2);
 
             int nbproduit = product.getQuantite() + qtchange;
             product.setQuantite(nbproduit);
+
+            for (PallierType u : product.getPalliers().getPallier()) {
+                if (u.getSeuil() <= product.getQuantite() && !u.isUnlocked()) {
+                    u.setUnlocked(true);
+                    this.applyPallier(product, u);
+                }
+            }
+
+            int qtmin = world.getProducts().getProduct().get(0).getQuantite();
+            for (ProductType p : world.getProducts().getProduct()) {
+                if (qtmin > p.getQuantite()) {
+                    qtmin = p.getQuantite();
+                }
+            }
+
+            for (PallierType au : world.getAllunlocks().getPallier()) {
+                if (au.getSeuil() <= qtmin && !au.isUnlocked()) {
+                    au.setUnlocked(true);
+                    for (ProductType p : world.getProducts().getProduct()) {
+                        this.applyPallier(p, au);
+                    }
+                }
+            }
 
         } else {
             // initialiser product.timeleft à product.vitesse
@@ -266,7 +281,6 @@ public class Services {
             product.setTimeleft(tl);
         }
         saveWordlToXml(world, username);
-        System.out.println(username);
         return true;
     }
 
@@ -295,5 +309,23 @@ public class Services {
             e.printStackTrace();
         }
 
+    }
+
+    public void applyPallier(ProductType product, PallierType pallier) {
+        switch (pallier.getTyperatio()) {
+        case VITESSE:
+            System.out.println("Vitesse diminuée");
+            product.vitesse = (int) (product.getVitesse() / pallier.getRatio());
+            product.timeleft = (int) (product.getTimeleft() / pallier.getRatio());
+            break;
+        case GAIN:
+            product.revenu = product.getRevenu() * pallier.getRatio();
+            break;
+        case QUANTITE:
+            product.quantite += pallier.getRatio();
+            break;
+        default:
+            break;
+        }
     }
 }
