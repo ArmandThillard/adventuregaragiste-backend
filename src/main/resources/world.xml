@@ -22,9 +22,36 @@
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>Roues</name>
-          <logo>str1234</logo>
+          <name>Roues AIXAM</name>
+          <logo>icones/roue.jpg</logo>
           <seuil>50</seuil>
+          <idcible>1</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Pneus AIXAM</name>
+          <logo>icones/pneu.png</logo>
+          <seuil>100</seuil>
+          <idcible>1</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Moteur AIXAM</name>
+          <logo>icones/moteur.jpg</logo>
+          <seuil>150</seuil>
+          <idcible>1</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Aileron AIXAM</name>
+          <logo>icones/aileron.jpg</logo>
+          <seuil>200</seuil>
           <idcible>1</idcible>
           <ratio>2</ratio>
           <typeratio>vitesse</typeratio>
@@ -45,9 +72,36 @@
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>sièges</name>
-          <logo>str1234</logo>
+          <name>Roues Twingo</name>
+          <logo>icones/roue.jpg</logo>
           <seuil>50</seuil>
+          <idcible>2</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Pneus Twingo</name>
+          <logo>icones/pneu.png</logo>
+          <seuil>100</seuil>
+          <idcible>2</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Moteur Twingo</name>
+          <logo>icones/moteur.jpg</logo>
+          <seuil>150</seuil>
+          <idcible>2</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Aileron Twingo</name>
+          <logo>icones/aileron.jpg</logo>
+          <seuil>200</seuil>
           <idcible>2</idcible>
           <ratio>2</ratio>
           <typeratio>vitesse</typeratio>
@@ -68,9 +122,36 @@
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>sièges</name>
-          <logo>str1234</logo>
+          <name>Roues A4</name>
+          <logo>icones/roue.jpg</logo>
           <seuil>50</seuil>
+          <idcible>3</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Pneus A4</name>
+          <logo>icones/pneu.png</logo>
+          <seuil>100</seuil>
+          <idcible>3</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Moteur A4</name>
+          <logo>icones/moteur.jpg</logo>
+          <seuil>150</seuil>
+          <idcible>3</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Aileron A4</name>
+          <logo>icones/aileron.jpg</logo>
+          <seuil>200</seuil>
           <idcible>3</idcible>
           <ratio>2</ratio>
           <typeratio>vitesse</typeratio>
@@ -91,9 +172,36 @@
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>ligne d'échappement</name>
-          <logo>str1234</logo>
+          <name>Roues Lotus</name>
+          <logo>icones/roue.jpg</logo>
           <seuil>50</seuil>
+          <idcible>4</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Pneus Lotus</name>
+          <logo>icones/pneu.png</logo>
+          <seuil>100</seuil>
+          <idcible>4</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Moteur Lotus</name>
+          <logo>icones/moteur.jpg</logo>
+          <seuil>150</seuil>
+          <idcible>4</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Aileron Lotus</name>
+          <logo>icones/aileron.jpg</logo>
+          <seuil>200</seuil>
           <idcible>4</idcible>
           <ratio>2</ratio>
           <typeratio>vitesse</typeratio>
@@ -114,9 +222,36 @@
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>turbo</name>
-          <logo>str1234</logo>
+          <name>Roues Ferrari</name>
+          <logo>icones/roue.jpg</logo>
           <seuil>50</seuil>
+          <idcible>5</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Pneus Ferrari</name>
+          <logo>icones/pneu.png</logo>
+          <seuil>100</seuil>
+          <idcible>5</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Moteur Ferrari</name>
+          <logo>icones/moteur.jpg</logo>
+          <seuil>150</seuil>
+          <idcible>5</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Aileron Ferrari</name>
+          <logo>icones/aileron.jpg</logo>
+          <seuil>200</seuil>
           <idcible>5</idcible>
           <ratio>2</ratio>
           <typeratio>vitesse</typeratio>
@@ -137,10 +272,37 @@
       <managerUnlocked>false</managerUnlocked>
       <palliers>
         <pallier>
-          <name>DRS</name>
-          <logo>str1234</logo>
+          <name>Roues F1</name>
+          <logo>icones/roue.jpg</logo>
           <seuil>50</seuil>
-          <idcible>4</idcible>
+          <idcible>6</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Pneus F1</name>
+          <logo>icones/pneu.png</logo>
+          <seuil>100</seuil>
+          <idcible>6</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Moteur F1</name>
+          <logo>icones/moteur.jpg</logo>
+          <seuil>150</seuil>
+          <idcible>6</idcible>
+          <ratio>2</ratio>
+          <typeratio>vitesse</typeratio>
+          <unlocked>false</unlocked>
+        </pallier>
+        <pallier>
+          <name>Aileron F1</name>
+          <logo>icones/aileron.jpg</logo>
+          <seuil>200</seuil>
+          <idcible>6</idcible>
           <ratio>2</ratio>
           <typeratio>vitesse</typeratio>
           <unlocked>false</unlocked>
@@ -150,9 +312,36 @@
   </products>
   <allunlocks>
     <pallier>
-      <name>Nouveau pont</name>
-      <logo>str1234</logo>
+      <name>Ils ont tous de nouvelles roues !</name>
+      <logo>icones/roue.jpg</logo>
       <seuil>50</seuil>
+      <idcible>0</idcible>
+      <ratio>2</ratio>
+      <typeratio>vitesse</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Ils ont tous de nouveaux pneus !</name>
+      <logo>icones/pneu.png</logo>
+      <seuil>100</seuil>
+      <idcible>0</idcible>
+      <ratio>2</ratio>
+      <typeratio>vitesse</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Ils ont tous un nouveau moteur !</name>
+      <logo>icones/moteur.jpg</logo>
+      <seuil>150</seuil>
+      <idcible>0</idcible>
+      <ratio>2</ratio>
+      <typeratio>vitesse</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Ils ont tous un nouvel aileron !</name>
+      <logo>icones/aileron.jpg</logo>
+      <seuil>200</seuil>
       <idcible>0</idcible>
       <ratio>2</ratio>
       <typeratio>vitesse</typeratio>
@@ -161,10 +350,55 @@
   </allunlocks>
   <upgrades>
     <pallier>
-      <name>Nouveaux pneus</name>
-      <logo>str1234</logo>
+      <name>Turbo AIXAM</name>
+      <logo>icones/turbo.jpg</logo>
       <seuil>500</seuil>
       <idcible>1</idcible>
+      <ratio>4</ratio>
+      <typeratio>vitesse</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Turbo Twingo</name>
+      <logo>icones/turbo.jpg</logo>
+      <seuil>1500</seuil>
+      <idcible>2</idcible>
+      <ratio>4</ratio>
+      <typeratio>vitesse</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Turbo A4</name>
+      <logo>icones/turbo.jpg</logo>
+      <seuil>15000</seuil>
+      <idcible>3</idcible>
+      <ratio>4</ratio>
+      <typeratio>vitesse</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Turbo Lotus</name>
+      <logo>icones/turbo.jpg</logo>
+      <seuil>30000</seuil>
+      <idcible>4</idcible>
+      <ratio>4</ratio>
+      <typeratio>vitesse</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Turbo Ferrari</name>
+      <logo>icones/turbo.jpg</logo>
+      <seuil>60000</seuil>
+      <idcible>5</idcible>
+      <ratio>4</ratio>
+      <typeratio>vitesse</typeratio>
+      <unlocked>false</unlocked>
+    </pallier>
+    <pallier>
+      <name>Turbo F1</name>
+      <logo>icones/turbo.jpg</logo>
+      <seuil>100000</seuil>
+      <idcible>6</idcible>
       <ratio>4</ratio>
       <typeratio>vitesse</typeratio>
       <unlocked>false</unlocked>
@@ -208,7 +442,7 @@
       <ratio></ratio>
       <typeratio></typeratio>
       <unlocked>false</unlocked>
-    </pallier>   
+    </pallier>
     <pallier>
       <name>Etudiant</name>
       <logo>icones/etudiant.jpg</logo>
@@ -226,7 +460,7 @@
       <ratio></ratio>
       <typeratio></typeratio>
       <unlocked>false</unlocked>
-    </pallier> 
+    </pallier>
     <pallier>
       <name>Paul Walker</name>
       <logo>icones/paul.jpg</logo>
